@@ -1,0 +1,28 @@
+{
+  "name": "control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnaVasilchenko878/control.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnaVasilchenko878/control/issues"
+  },
+  "homepage": "https://github.com/AnnaVasilchenko878/control#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "webpack": "^5.65.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "webpack-cli": "^4.9.1"
+  }
+}
