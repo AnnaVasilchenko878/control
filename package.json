@@ -19,6 +19,7 @@
   "homepage": "https://github.com/AnnaVasilchenko878/control#readme",
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.65.0"
   },
   "dependencies": {
