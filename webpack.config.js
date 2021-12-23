@@ -1,4 +1,5 @@
 const PATH = require('path'),
+miniCssExtractPlugin = require('mini-css-extract-plugin'),
 ISDEV = process.env.NODE_ENV === 'development',
 ISPROD = !ISDEV;
 const filename = (ext) =>ISDEV?`[name].${ext}`:`[name].[contenthash].${ext}`;
@@ -9,7 +10,8 @@ module.exports = {
     entry: './js/main.js',
     output: {
         filename: `./js/${filename('js')}`,
-        path: PATH.resolve(__dirname, 'app')
+        path: PATH.resolve(__dirname, 'app'),
+        clean: true
     },
     plugins: [
         new htmlWebpackPlugin({
@@ -19,6 +21,17 @@ module.exports = {
                 collapseWhitespace: ISPROD
             }
 
+        }),
+        new miniCssExtractPlugin({
+            filename: `./css/${filename('css')}`
         })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: [miniCssExtractPlugin.loader, 'css-loader'],
+              },
+        ]
+    }
 };
